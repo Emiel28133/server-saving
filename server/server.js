@@ -5,7 +5,6 @@ app.use(express.json());
 
 const db = new sqlite3.Database("playerdata.db");
 
-// Zorg dat de tabel bestaat
 db.serialize(() => {
     db.run(`CREATE TABLE IF NOT EXISTS players (
     name TEXT PRIMARY KEY,

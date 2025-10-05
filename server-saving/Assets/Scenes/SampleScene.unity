@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
   baseUrl: http://localhost:3000/player
-  playerName: Alice
+  playerName: Alice2
   currentData:
     money: 0
     level: 0
