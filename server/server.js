@@ -8,11 +8,6 @@
  *  - Profile name normalization (case-insensitive, spaces allowed, safe charset)
  *  - Optional claim endpoint (if you later add legacy/migrated rows)
  *  - dotenv for secrets (ENCRYPTION_KEY + JWT_SECRET)
- *
- * IMPORTANT:
- *  1. Create a .env file (copy from .env.example).
- *  2. Use a 64 hex char ENCRYPTION_KEY (32 bytes).
- *  3. Keep ENCRYPTION_KEY stable or you won't be able to decrypt existing data.
  */
 
 require('dotenv').config(); // Load environment variables from .env early
