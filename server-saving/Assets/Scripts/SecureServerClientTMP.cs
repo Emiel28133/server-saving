@@ -51,7 +51,7 @@ public class SecureServerClientTMP : MonoBehaviour
     private void AppendInfo(string msg)
     {
         if (!infoText) { Debug.Log(msg); return; }
-        infoText.text = (infoText.text ?? string.Empty) + "\n" + msg;q  asw132
+        infoText.text = (infoText.text ?? string.Empty) + "\n" + msg;
         Debug.Log(msg);
     }
 
