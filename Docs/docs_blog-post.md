@@ -1,10 +1,3 @@
----
-title: "Building a Secure Game Save Service: JWT + AES-256-GCM in Unity"
-date: "2025-11-07"
-tags: ["Unity", "Node.js", "Security", "Game Development"]
-repo: "https://github.com/Emiel28133/server-saving"
----
-
 ## Het probleem
 Tijdens het vak Verdieping Software wilde ik game-progressie **centraal en veilig** opslaan. Lokale saves werken niet over devices heen en zijn kwetsbaar. Mijn oplossing: een REST API met authenticatie en versleutelde database.
 
@@ -35,7 +28,7 @@ Unity → HTTPS → Express API → SQLite
 **Oplossing:** Vaste key in `.env` (64 hex = 32 bytes). `.env.example` toegevoegd met instructies.
 
 ### 3. Onduidelijke fouten in Unity UI
-**Oplossing:** `infoText` met kleurcodes en herstelstappen:
+**Oplossing:** `infoText` met herstelstappen:
 ```csharp
 if (response.error.Contains("401")) {
     infoText.text = "<color=red>Token expired. Please login again.</color>";
@@ -66,17 +59,7 @@ function encrypt(plaintext) {
 - ✅ Duidelijke UX bij fouten.
 - ✅ Definition of Done: getest op 2 machines, gedocumenteerd, secrets safe.
 
-## Volgende stappen
-- **Save-slots:** Meerdere saves per profiel (schema + UI).
-- **Refresh tokens:** Langere sessies zonder security-risico.
-- **Deployment:** Publiek HTTPS-certificaat (Let's Encrypt) + hosting.
-- **(Stretch)** Basic multiplayer via WebSockets.
 
 ## Links
 - [GitHub Repo](https://github.com/Emiel28133/server-saving)
 - [Trello Board](https://trello.com/b/YZ5GvW4C/verdieping-software)
-- [Showreel](#) _(vul link in na upload)_
-
----
-
-**Geleerd:** Praktische security (key management, JWT expiration), Unity networking, data-normalisatie, UX-foutafhandeling. Deze stack is herbruikbaar voor toekomstige multiplayer-projecten.
